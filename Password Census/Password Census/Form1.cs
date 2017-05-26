@@ -37,24 +37,36 @@ namespace Password_Census
             String line;
             String path = "C:\\Users\\Miki\\Desktop\\tg.txt";
         try{
-                //Pass the file path and file name to the StreamReader constructor
-                StreamReader sr = new StreamReader(path);
-
-                //Read the first line of text
-                line = sr.ReadLine();
-
-                //Continue to read until you reach end of file
-                while (line != null)
+                OpenFileDialog openFileDialog1 = new OpenFileDialog()
                 {
-                    //write the lie to console window
-                    Console.WriteLine(line);
-                    //Read the next line
-                    line = sr.ReadLine();
-                }
+                    Filter = "Text Files|*.txt",
+                    Title = "Select a Text File"
+                };
 
-                //close the file
-                sr.Close();
-                Console.ReadLine();
+                // Show the Dialog.
+                // If the user clicked OK in the dialog and
+                // a .CUR file was selected, open it.
+                if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //Pass the file path and file name to the StreamReader constructor
+                    StreamReader sr = new StreamReader(openFileDialog1.FileName);
+
+                    //Read the first line of text
+                    line = sr.ReadLine();
+
+                    //Continue to read until you reach end of file
+                    while (line != null)
+                    {
+                        //write the lie to console window
+                        Console.WriteLine(line);
+                        //Read the next line
+                        line = sr.ReadLine();
+                    }
+
+                    //close the file
+                    sr.Close();
+                    Console.ReadLine();
+                }
             }
             catch (Exception ex)
             {
