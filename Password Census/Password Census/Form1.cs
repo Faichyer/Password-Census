@@ -18,26 +18,13 @@ namespace Password_Census
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            String path = "C:\\Users\\Miki\\Desktop\\tg.txt";
-            if (!File.Exists(path))
-            {
-                using (StreamWriter sw = File.AppendText(path))
-                {
-                    sw.WriteLine("The very first line!");
-                    sw.WriteLine("From the StreamWriter class");
-                    sw.Close();
-                }
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void OpenFileButton_Click(object sender, EventArgs e)
         {
             String line;
             String path = "C:\\Users\\Miki\\Desktop\\tg.txt";
-        try{
-                OpenFileDialog openFileDialog1 = new OpenFileDialog()
+            try
+            {
+                OpenFileDialog openFileDialogText = new OpenFileDialog()
                 {
                     Filter = "Text Files|*.txt",
                     Title = "Select a Text File"
@@ -46,10 +33,10 @@ namespace Password_Census
                 // Show the Dialog.
                 // If the user clicked OK in the dialog and
                 // a .CUR file was selected, open it.
-                if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (openFileDialogText.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     //Pass the file path and file name to the StreamReader constructor
-                    StreamReader sr = new StreamReader(openFileDialog1.FileName);
+                    StreamReader sr = new StreamReader(openFileDialogText.FileName);
 
                     //Read the first line of text
                     line = sr.ReadLine();
@@ -75,8 +62,27 @@ namespace Password_Census
             finally
             {
                 Console.WriteLine("Executing finally block.");
-               
+
             }
+        }
+
+        private void CreateTextFileButton_Click(object sender, EventArgs e)
+        {
+            String path = "C:\\Users\\Miki\\Desktop\\tg.txt";
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.WriteLine("The very first line!");
+                    sw.WriteLine("From the StreamWriter class");
+                    sw.Close();
+                }
+            }
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
