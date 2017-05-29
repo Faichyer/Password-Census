@@ -35,6 +35,7 @@
             this.OpenFileButton = new ns1.BunifuThinButton2();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuImageButton1 = new ns1.BunifuImageButton();
+            this.MySaisieMDP = new Password_Census.SaisieMDP();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,8 +132,18 @@
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
+            // MySaisieMDP
+            // 
+            this.MySaisieMDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.MySaisieMDP.Location = new System.Drawing.Point(2, 89);
+            this.MySaisieMDP.Name = "MySaisieMDP";
+            this.MySaisieMDP.Size = new System.Drawing.Size(675, 495);
+            this.MySaisieMDP.TabIndex = 4;
+            this.MySaisieMDP.Visible = false;
+            // 
             // Form1
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
@@ -141,6 +152,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.OpenFileButton);
             this.Controls.Add(this.CreateTextFileButton);
+            this.Controls.Add(this.MySaisieMDP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -157,6 +169,7 @@
         private ns1.BunifuFlatButton CreateTextFileButton;
         private ns1.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.Label label1;
+        private SaisieMDP MySaisieMDP;
     }
 }
 

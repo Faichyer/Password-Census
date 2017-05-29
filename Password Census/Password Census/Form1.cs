@@ -13,10 +13,14 @@ namespace Password_Census
 {
     public partial class Form1 : Form
     {
+        SaisieMDP mySaisie;
         public Form1()
         {
             InitializeComponent();
+            this.mySaisie = new SaisieMDP();
         }
+
+        #region Menu principal
 
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
@@ -53,6 +57,7 @@ namespace Password_Census
                     //close the file
                     sr.Close();
                     Console.ReadLine();
+                    MySaisieMDP.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -80,9 +85,13 @@ namespace Password_Census
             }
         }
 
+        #endregion 
+
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+
     }
 }
